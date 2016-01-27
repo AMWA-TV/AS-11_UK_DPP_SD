@@ -395,7 +395,7 @@ There are two special types of Block which allow the value of one Block to be se
         [A] The "channel number in the <8-channel AES3 element> is the "Audio Track Number" defined in <EBU R 48> and <EBU R 123>.
             <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/block/SM5/artefacts/160.xml>
             [T] 8-channel AES3 element
-                A way of multiplexing up to eight channels of AES3 audio data.Section 7.1 of 
+                A way of multiplexing up to eight channels of AES3 audio data.
                 <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/reference/SMPTE/ST0331/term/8-channel%20AES3%20element/>
             [R] EBU R 48
                 <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/reference/EBU/R048/document/2005/>
@@ -1029,7 +1029,7 @@ There are two special types of Block which allow the value of one Block to be se
             [A] Only the channels in the <8-channel AES3 element> with a "channel number" of 1, 2, 3 or 4 are valid.
                 <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/block/140/artefacts/1.xml>
                 [T] 8-channel AES3 element
-                    A way of multiplexing up to eight channels of AES3 audio data.Section 7.1 of 
+                    A way of multiplexing up to eight channels of AES3 audio data.
                     <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/reference/SMPTE/ST0331/term/8-channel%20AES3%20element/>
         [B] R48 2a customisation
             Conformance: mandatory
@@ -1037,7 +1037,7 @@ There are two special types of Block which allow the value of one Block to be se
             [A] If the value of <AS_11_Audio_Track_Layout> is Layout_EBU_R_48_2a then each channel in the <8-channel AES3 element> with a "channel number" of 3 or 4 contains digital silence.
                 <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/block/170/artefacts/1.xml>
                 [T] 8-channel AES3 element
-                    A way of multiplexing up to eight channels of AES3 audio data.Section 7.1 of 
+                    A way of multiplexing up to eight channels of AES3 audio data.
                     <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/reference/SMPTE/ST0331/term/8-channel%20AES3%20element/>
         [B] No Closed Captions
             Conformance: mandatory
