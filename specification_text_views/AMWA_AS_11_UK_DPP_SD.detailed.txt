@@ -948,7 +948,7 @@ There are two special types of Block which allow the value of one Block to be se
         [B] R48 2a customisation
             Conformance: mandatory
             <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/block/170/>
-            [A] If the value of <AS_11_Audio_Track_Layout> is Layout_EBU_R_48_2a then each channel in the <8-channel AES3 element> with a "channel number" of 3 or 4 contains digital silence.
+            [A] If the value of AS_11_Audio_Track_Layout is Layout_EBU_R_48_2a then each channel in the <8-channel AES3 element> with a "channel number" of 3 or 4 contains digital silence.
                 <URL: http://vm-1274-user.virt.ch.bbc.co.uk/as/block/170/artefacts/1.xml>
                 [T] 8-channel AES3 element
                     A way of multiplexing up to eight channels of AES3 audio data.
