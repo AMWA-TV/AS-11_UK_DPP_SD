@@ -18,6 +18,31 @@
 </head>
 
 <body>
+
+
+
+    <div id="component-id-message" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="component-id-message-title">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="component-id-message-title">Rules-based Specification Component ID</h4>
+          </div>
+          <div class="modal-body">
+            <p>The web address / URL you have clicked on is the ID (identity) of this Rules-based Specification Component.</p>
+            <p>There need not be any content available at the web address / URL used for the ID.</p>
+              <p><em>Full</em> details of <em>all</em> the Components (Blocks, Notes, and the others) that form this
+    Rules-based Specification are either shown directly on the current web page or are included in the
+    "specification_data_files" directory that accompanies the page (with explicit links from the
+    current page).</p>
+            <p>A web address / URL is used for the ID because it provides a simple way to construct and manage a large
+                number of unique IDs in a format that is easy for modern web-capable tools to process.</p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
     <div class="container" role="main">
 
 <!-- START -->
@@ -25,12 +50,47 @@
         <h1><span class="bg-danger">[Work In Progress]</span> AMWA AS-11 UK DPP SD <br><small> MXF Program Contribution - UK DPP SD</small></h1>
         <hr>
 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">About this web page</h2>
+          </div>
+          <div class="panel-body">
+            <p>This web page is the principal rendering / view of the AMWA AS-11 UK DPP SD Specification.</p>
+            <p><em>Full</em> details of <em>all</em> the Components (Blocks, Notes, and the others) that form this
+    Rules-based Specification are either shown directly on the current web page or are included in the
+    "specification_data_files" directory that accompanies the page (with explicit links from the
+    current page).</p>
+          </div>
+        </div>
+
+
 <!-- HEADER DOCUMENTS -->
 
               
             
                 <div class='header_markdown'>
-                    <p><em>This file is one rendering / view of this AMWA Specification and is a part of the Specification repository. Visit the AMWA <a href="http://amwa.tv/projects/AS-11-UK-DPP.shtml">web page for this Specification</a> which has information about revisions and current development.</em></p>
+                    <table class="table table-bordered table-hover table-condensed">
+<thead>
+<tr>
+<th><em>Important links</em></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/AMWA-TV/AS-11_UK_DPP_SD/">Specification Repository on GitHub</a></td>
+<td>This repository is where the entire Specification (including this file and alternative renderings / views of the Specification) is stored and version controlled</td>
+</tr>
+<tr>
+<td><a href="http://amwa.tv/projects/AS-11-UK-DPP.shtml">Project Page on the AMWA Website</a></td>
+<td>The home of the Specification on the AMWA website</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AMWA-TV/AS-11_Overview/">Development and Implementation Resources</a></td>
+<td>Provides resources such as Specification issue tracking, MXF sample files, and tools</td>
+</tr>
+</tbody>
+</table>
 
                 </div>
             
@@ -70,7 +130,7 @@
 
 <h3 id="the-rules-based-specification-framework">The Rules-Based Specification Framework</h3>
 
-<p>This Specification has been written using a 'Rules-based Specification Framework'. In this framework, each 'constraint' or 'rule' is expressed as a 'Component' which can be unambiguosly identified by its ID (which is a URL). These Components assemble into 'networks' or 'webs' to form complete Specifications, with many Components being re-used across a number of Specifications. Through this approach machine processable Specifications are developed which are less ambiguous and easier to implement and test.</p>
+<p>This Specification has been written using a 'Rules-based Specification Framework'. In this framework, each 'constraint' or 'rule' is expressed as a 'Component' which can be unambiguously identified by its ID (the Component ID is a web address / URL; there need not be any content available at this web address). These Components assemble into 'networks' or 'webs' to form complete Specifications, with many Components being re-used across a number of Specifications. Through this approach machine processable Specifications are developed which are less ambiguous and easier to implement and test. To read a more detailed introduction to the Rules-based Specification Framework refer to <a href="http://www.bbc.co.uk/rd/publications/whitepaper319">Rules-Based Specifications: Modelling and Processing</a>.</p>
 
 <ul>
 <li><strong>Blocks (B)</strong> are the fundamental 'building bricks' of a Specification -- they provide its <em>structure</em>.</li>
@@ -78,9 +138,11 @@
 <li>Artefacts provide the real <em>content</em> of a Specification. They may contain textual statements, code excerpts, or tables, for example.</li>
 <li>Artefacts often refer to <strong>Terms (T)</strong> and <strong>References (R)</strong> as well as Blocks.</li>
 <li>Blocks are sometimes described by <strong>Notes (N)</strong>.</li>
-<li>There are two special types of Block which allow the value of one Block to be set by another Block:</li>
+<li>There are two special types of Block which allow the value of one Block to be set by another Block:<ul>
 <li><strong>Parameter Key Block (K)</strong> -- this is a Block whose value must be set elsewhere in the Specification (it effectively defines a "variable" or an "argument").</li>
 <li><strong>Parameter Value Block (V)</strong> -- this is a Block which sets the value of a specific Parameter Key Block.</li>
+</ul>
+</li>
 </ul>
 
 <p>In this document the network of Blocks (and other Components) that form the Specification are shown as a 'tree': the Specification Blocks Tree. The letters in brackets above are used in the tree to identify the different kinds of Component.</p>
@@ -117,9 +179,9 @@
                 <dt><img alt="Block icon" src="include/block.png" width="20" height="20">Block</dt>
                 <dd>Its meaning is defined by its contents, which can be Artefacts or other Blocks.</dd>
                 <dt><img alt="Parameter Key icon" src="include/key.png" width="20" height="20">Parameter Key</dt>
-                <dd>A Block whose value must be set elsewhere in the Specification (it effectively declares a "variable" or an "argument")</dd>
+                <dd>A Block whose value must be set elsewhere in the Specification (it effectively declares a "variable" or an "argument").</dd>
                 <dt><img alt="Parameter Value icon" src="include/value.png" width="20" height="20">Parameter Value</dt>
-                <dd>A Block which sets the value of a specific Parameter Key Block</dd>
+                <dd>A Block which sets the value of a specific Parameter Key Block.</dd>
                 <dt><img alt="Note icon" src="include/note.png" width="20" height="20">Note</dt>
                 <dd>This provides informative guidance on the implementation or application of a Block.</dd>
                 <dt><img alt="Artefact icon" src="include/artefact.png" width="20" height="20">Artefact</dt>
@@ -134,6 +196,12 @@
                 <dt><img alt="Non-mandatory Block icon" src="include/blockrec.png" width="20" height="20"></dt>
                 <dd>An icon with an outline style denotes constraints that are <em>not mandatory</em>.</dd>
             </dl>
+
+            <dl class="dl-horizontal">
+                <dt><img alt="Component metadata icon" src="include/cog.png" width="20" height="20"></dt>
+                <dd>Metadata about a Rules-based Specification Component.</dd>
+            </dl>
+
         </div>
         <div class="control_buttons_group">
             <button class="btn btn-default" type="button" id="tree_expand_first">Expand first level</button>
@@ -150,13 +218,11 @@
 <b>File Format</b>
                     </div>
                     <ul>
-                    <li data-jstree='{"icon":"include/file.png"}' id='c42dd9fe7fc0b1e09086c9cfc2fc7f5d-info'>
-                        <div class='content_container clearfix'>
-                            Additional Information
-                        </div>
+                    <li data-jstree='{"icon":"include/cog.png"}' id='c42dd9fe7fc0b1e09086c9cfc2fc7f5d-info'>
+                        <p class='info'>Component metadata</p>
                         <ul>
                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='c42dd9fe7fc0b1e09086c9cfc2fc7f5d-info-ID'>
-                            <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/FF_4/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/FF_4/</a></p>
+                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/FF_4/</a></p>
                         </li>
                         </ul>
                     </li>
@@ -165,13 +231,11 @@
 <b>Core MXF constraints</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='996ac5debaee4942c9b5b2e87559ee18-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='996ac5debaee4942c9b5b2e87559ee18-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='996ac5debaee4942c9b5b2e87559ee18-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/MXF_Core_12/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/MXF_Core_12/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/MXF_Core_12/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -180,13 +244,11 @@
 <b>MXF File Format</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='6e00ad0656eab6d1e2e1d4b27cd4ad7c-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='6e00ad0656eab6d1e2e1d4b27cd4ad7c-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='6e00ad0656eab6d1e2e1d4b27cd4ad7c-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/005/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/005/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/005/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -200,13 +262,11 @@
 <b>Later versions of MXF</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='52aa1b59b14609d32d85cc41d10d1c23-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='52aa1b59b14609d32d85cc41d10d1c23-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='52aa1b59b14609d32d85cc41d10d1c23-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/030/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/030/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/030/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -224,13 +284,11 @@
 <b>Operational pattern 1a</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='e2184c61f7fdd510d3639fdf190d9171-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='e2184c61f7fdd510d3639fdf190d9171-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='e2184c61f7fdd510d3639fdf190d9171-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/010/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/010/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/010/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -244,13 +302,11 @@
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='0ea9a2a026f643102ee7b38277413687-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='0ea9a2a026f643102ee7b38277413687-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='0ea9a2a026f643102ee7b38277413687-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/011/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/011/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/011/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -268,13 +324,11 @@
 <b>Closed Complete Header</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='6e531db6c987003de1b31f8e3e59f7e1-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='6e531db6c987003de1b31f8e3e59f7e1-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='6e531db6c987003de1b31f8e3e59f7e1-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/020/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/020/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/020/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -288,13 +342,11 @@
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='7615974b5d47804ef93d2a6f0eef0a61-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='7615974b5d47804ef93d2a6f0eef0a61-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='7615974b5d47804ef93d2a6f0eef0a61-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/014/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/014/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/014/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -312,13 +364,11 @@
 <b>Generic Container</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='c91bb7d203a55bd476afae0270f512e9-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='c91bb7d203a55bd476afae0270f512e9-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='c91bb7d203a55bd476afae0270f512e9-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/090/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/090/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/090/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -334,13 +384,11 @@
 <b>Internal Essence</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='85dfbc617cc5aba37de5d67c2994eb24-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='85dfbc617cc5aba37de5d67c2994eb24-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='85dfbc617cc5aba37de5d67c2994eb24-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/100/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/100/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/100/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -356,13 +404,11 @@
 <b>Strict Frame Wrapping</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='31ea0b7e640f7aa4dfb091f047803b75-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='31ea0b7e640f7aa4dfb091f047803b75-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='31ea0b7e640f7aa4dfb091f047803b75-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/110/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/110/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/110/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -381,13 +427,11 @@
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='039888c1f74a83aba5e549a56395a720-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='039888c1f74a83aba5e549a56395a720-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='039888c1f74a83aba5e549a56395a720-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/E8/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/E8/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/E8/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -405,13 +449,11 @@
 <b>One-to-one Track mapping</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='142ea359e2c5d855937b799f1f51e300-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='142ea359e2c5d855937b799f1f51e300-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='142ea359e2c5d855937b799f1f51e300-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/120/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/120/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/120/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -425,13 +467,11 @@
 <b>No division/combination of Audio Channels between Sound Tracks</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='80a42ec426406e26d34e8193111ee6aa-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='80a42ec426406e26d34e8193111ee6aa-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='80a42ec426406e26d34e8193111ee6aa-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/E19/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/E19/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/E19/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -458,13 +498,11 @@
 <b>Header Metadata KLV Fill</b> <em>(Recommended)</em>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='d5d22548bd850d6a41e0f2594286112f-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='d5d22548bd850d6a41e0f2594286112f-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='d5d22548bd850d6a41e0f2594286112f-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/030/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/030/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/030/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -478,13 +516,11 @@
 <b>Implementation Notes</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='6782f8647a96f61aeb531ae17af9d236-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='6782f8647a96f61aeb531ae17af9d236-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='6782f8647a96f61aeb531ae17af9d236-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/002/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/002/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/002/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -504,13 +540,11 @@
 <b>MXF Indexing and Partitioning strategy for CBE Essence</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='1ae17be23c3e81fbd8111391708b7660-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='1ae17be23c3e81fbd8111391708b7660-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='1ae17be23c3e81fbd8111391708b7660-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/MXF_Intra/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/MXF_Intra/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/MXF_Intra/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -519,13 +553,11 @@
 <b>Index precedes Essence</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='c5865b079ab1175cc0911d0e3d9f2140-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='c5865b079ab1175cc0911d0e3d9f2140-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='c5865b079ab1175cc0911d0e3d9f2140-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/060/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/060/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/060/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -541,13 +573,11 @@
 <b>Index all Essence</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='e5a22bd53665d612e89a38100510cd51-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='e5a22bd53665d612e89a38100510cd51-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='e5a22bd53665d612e89a38100510cd51-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/070/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/070/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/070/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -563,13 +593,11 @@
 <b>Single Essence Partition</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='b6b27c5889a990dcff38004d2f1f0435-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='b6b27c5889a990dcff38004d2f1f0435-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='b6b27c5889a990dcff38004d2f1f0435-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/101/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/101/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/101/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -585,13 +613,11 @@
 <b>Indexing and Partitions</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='a165da1f93112cd249d84ddd5648ea0e-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='a165da1f93112cd249d84ddd5648ea0e-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='a165da1f93112cd249d84ddd5648ea0e-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/007/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/007/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/007/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -611,13 +637,11 @@
 <b>ST 386 with D-10 625i25 at 50 Mbps</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='1c8d8f3ec1dcc2dd78c0ff16d8369532-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='1c8d8f3ec1dcc2dd78c0ff16d8369532-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='1c8d8f3ec1dcc2dd78c0ff16d8369532-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/PE2/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/PE2/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/PE2/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -631,13 +655,11 @@
 <b>Implementation Notes</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='9b550aa55a6e5823565435dc277c21d0-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='9b550aa55a6e5823565435dc277c21d0-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='9b550aa55a6e5823565435dc277c21d0-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/E33/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/E33/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/E33/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -667,13 +689,11 @@
 <b>Uncompressed 24-bit PCM audio at 48 kHz</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='c38ce7d5568812cf02b59865362447e6-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='c38ce7d5568812cf02b59865362447e6-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='c38ce7d5568812cf02b59865362447e6-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/230/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/230/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/230/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -687,13 +707,11 @@
 <b>Implementation Notes</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='a12bc69aaa0166cf4738446497a0d01c-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='a12bc69aaa0166cf4738446497a0d01c-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='a12bc69aaa0166cf4738446497a0d01c-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/029/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/029/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/029/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -711,13 +729,11 @@
 <b>Simple channel numbering for 8-channel AES3 element</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='d9d0ed4ecb6dfa08a7264ffb3ad2eb30-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='d9d0ed4ecb6dfa08a7264ffb3ad2eb30-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='d9d0ed4ecb6dfa08a7264ffb3ad2eb30-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/SM5/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/SM5/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/SM5/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -733,13 +749,11 @@
 <b>AS-11 Core DM (Descriptive Metadata)</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='02029df65def6483d73ddd7357bbdc47-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='02029df65def6483d73ddd7357bbdc47-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='02029df65def6483d73ddd7357bbdc47-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/550/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/550/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/550/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -753,13 +767,11 @@
 <b>DM_AS_11_Core DM Scheme</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='ed913239dd23a7b9a2e8939dcf882d72-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='ed913239dd23a7b9a2e8939dcf882d72-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='ed913239dd23a7b9a2e8939dcf882d72-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500S/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500S/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500S/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -773,13 +785,11 @@
 <b>DM_AS_11_Core</b>
                                         </div>
                                         <ul>
-                                        <li data-jstree='{"icon":"include/file.png"}' id='80cf543061858dd8c5443533a119a512-info'>
-                                            <div class='content_container clearfix'>
-                                                Additional Information
-                                            </div>
+                                        <li data-jstree='{"icon":"include/cog.png"}' id='80cf543061858dd8c5443533a119a512-info'>
+                                            <p class='info'>Component metadata</p>
                                             <ul>
                                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='80cf543061858dd8c5443533a119a512-info-ID'>
-                                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500L/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500L/</a></p>
+                                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500L/</a></p>
                                             </li>
                                             </ul>
                                         </li>
@@ -795,13 +805,11 @@
 <b>DM_AS_11_Core_Framework</b>
                                         </div>
                                         <ul>
-                                        <li data-jstree='{"icon":"include/file.png"}' id='c2669bb5c54327d58e10b5e8a388cc16-info'>
-                                            <div class='content_container clearfix'>
-                                                Additional Information
-                                            </div>
+                                        <li data-jstree='{"icon":"include/cog.png"}' id='c2669bb5c54327d58e10b5e8a388cc16-info'>
+                                            <p class='info'>Component metadata</p>
                                             <ul>
                                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='c2669bb5c54327d58e10b5e8a388cc16-info-ID'>
-                                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500F/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500F/</a></p>
+                                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/500F/</a></p>
                                             </li>
                                             </ul>
                                         </li>
@@ -843,13 +851,11 @@ if (AS_11_Closed_Captions_Present):
 <b>Constrained Static DM Track</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='b74cd3ca76a38cb7e41f1ba6ed850c79-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='b74cd3ca76a38cb7e41f1ba6ed850c79-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='b74cd3ca76a38cb7e41f1ba6ed850c79-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/056/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/056/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/056/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -863,13 +869,11 @@ if (AS_11_Closed_Captions_Present):
 <b>Track Name</b>
                                     </div>
                                     <ul>
-                                    <li data-jstree='{"icon":"include/file.png"}' id='427c035cf428e3062827db26f0146d2a-info'>
-                                        <div class='content_container clearfix'>
-                                            Additional Information
-                                        </div>
+                                    <li data-jstree='{"icon":"include/cog.png"}' id='427c035cf428e3062827db26f0146d2a-info'>
+                                        <p class='info'>Component metadata</p>
                                         <ul>
                                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='427c035cf428e3062827db26f0146d2a-info-ID'>
-                                            <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/039/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/039/</a></p>
+                                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/039/</a></p>
                                         </li>
                                         </ul>
                                     </li>
@@ -889,13 +893,11 @@ if (AS_11_Closed_Captions_Present):
 <b>Repetition of Header Metadata</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='10c06bd06a9fed32b4ed5d2df8c048db-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='10c06bd06a9fed32b4ed5d2df8c048db-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='10c06bd06a9fed32b4ed5d2df8c048db-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/051/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/051/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/051/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -913,13 +915,11 @@ if (AS_11_Closed_Captions_Present):
 <b>AS-11 UKDPP DM (Descriptive Metadata)</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='ba2fb662b24a54bc35b96cf5cd05737a-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='ba2fb662b24a54bc35b96cf5cd05737a-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='ba2fb662b24a54bc35b96cf5cd05737a-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/555/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/555/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/555/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -933,13 +933,11 @@ if (AS_11_Closed_Captions_Present):
 <b>DM_AS_11_UKDPP DM Scheme</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='7f3e9f31457926ca1560eb23bf74816f-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='7f3e9f31457926ca1560eb23bf74816f-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='7f3e9f31457926ca1560eb23bf74816f-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510S/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510S/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510S/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -953,13 +951,11 @@ if (AS_11_Closed_Captions_Present):
 <b>DM_AS_11_UKDPP</b>
                                         </div>
                                         <ul>
-                                        <li data-jstree='{"icon":"include/file.png"}' id='262188909e68fe8aa45d82fa67f9624c-info'>
-                                            <div class='content_container clearfix'>
-                                                Additional Information
-                                            </div>
+                                        <li data-jstree='{"icon":"include/cog.png"}' id='262188909e68fe8aa45d82fa67f9624c-info'>
+                                            <p class='info'>Component metadata</p>
                                             <ul>
                                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='262188909e68fe8aa45d82fa67f9624c-info-ID'>
-                                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510L/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510L/</a></p>
+                                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510L/</a></p>
                                             </li>
                                             </ul>
                                         </li>
@@ -975,13 +971,11 @@ if (AS_11_Closed_Captions_Present):
 <b>DM_AS_11_UKDPP Framework</b>
                                         </div>
                                         <ul>
-                                        <li data-jstree='{"icon":"include/file.png"}' id='9b1785d7c196a392933075c8fd144a0a-info'>
-                                            <div class='content_container clearfix'>
-                                                Additional Information
-                                            </div>
+                                        <li data-jstree='{"icon":"include/cog.png"}' id='9b1785d7c196a392933075c8fd144a0a-info'>
+                                            <p class='info'>Component metadata</p>
                                             <ul>
                                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='9b1785d7c196a392933075c8fd144a0a-info-ID'>
-                                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510F/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510F/</a></p>
+                                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/510F/</a></p>
                                             </li>
                                             </ul>
                                         </li>
@@ -1042,13 +1036,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Constrained Static DM Track</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='ed093bb7db019960e869e7ae10332049-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='ed093bb7db019960e869e7ae10332049-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='ed093bb7db019960e869e7ae10332049-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/056/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/056/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/056/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1062,13 +1054,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Track Name</b>
                                     </div>
                                     <ul>
-                                    <li data-jstree='{"icon":"include/file.png"}' id='eb587130085960fca58aac5c30a36be1-info'>
-                                        <div class='content_container clearfix'>
-                                            Additional Information
-                                        </div>
+                                    <li data-jstree='{"icon":"include/cog.png"}' id='eb587130085960fca58aac5c30a36be1-info'>
+                                        <p class='info'>Component metadata</p>
                                         <ul>
                                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='eb587130085960fca58aac5c30a36be1-info-ID'>
-                                            <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/039/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/039/</a></p>
+                                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/039/</a></p>
                                         </li>
                                         </ul>
                                     </li>
@@ -1088,13 +1078,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Repetition of Header Metadata</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='69734dc01ea14e41351d1dca38d1fbf6-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='69734dc01ea14e41351d1dca38d1fbf6-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='69734dc01ea14e41351d1dca38d1fbf6-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/051/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/051/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/051/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1112,13 +1100,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>AS-11 Segmentation DM (Descriptive Metadata)</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='e9dafc6e705232fdd27bd101ec6ae9f4-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='e9dafc6e705232fdd27bd101ec6ae9f4-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='e9dafc6e705232fdd27bd101ec6ae9f4-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/530/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/530/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/530/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -1132,13 +1118,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Program Segmentation Track</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='858f7d3c5dbbc83e6e7f3657c98905b0-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='858f7d3c5dbbc83e6e7f3657c98905b0-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='858f7d3c5dbbc83e6e7f3657c98905b0-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/532/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/532/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/532/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1162,13 +1146,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Track Name</b>
                                     </div>
                                     <ul>
-                                    <li data-jstree='{"icon":"include/file.png"}' id='9f19907a15f509b09159b68553605c9c-info'>
-                                        <div class='content_container clearfix'>
-                                            Additional Information
-                                        </div>
+                                    <li data-jstree='{"icon":"include/cog.png"}' id='9f19907a15f509b09159b68553605c9c-info'>
+                                        <p class='info'>Component metadata</p>
                                         <ul>
                                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='9f19907a15f509b09159b68553605c9c-info-ID'>
-                                            <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/038/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/038/</a></p>
+                                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/038/</a></p>
                                         </li>
                                         </ul>
                                     </li>
@@ -1184,13 +1166,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Determining SOM and EOM</b>
                                     </div>
                                     <ul>
-                                    <li data-jstree='{"icon":"include/file.png"}' id='3fb4c5662506b5fdfc06caa1e5c5b8b5-info'>
-                                        <div class='content_container clearfix'>
-                                            Additional Information
-                                        </div>
+                                    <li data-jstree='{"icon":"include/cog.png"}' id='3fb4c5662506b5fdfc06caa1e5c5b8b5-info'>
+                                        <p class='info'>Component metadata</p>
                                         <ul>
                                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='3fb4c5662506b5fdfc06caa1e5c5b8b5-info-ID'>
-                                            <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/040/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/040/</a></p>
+                                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/040/</a></p>
                                         </li>
                                         </ul>
                                     </li>
@@ -1206,13 +1186,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Non-Programme Content</b>
                                     </div>
                                     <ul>
-                                    <li data-jstree='{"icon":"include/file.png"}' id='8f9983bfa1797eaa0fe686260225d689-info'>
-                                        <div class='content_container clearfix'>
-                                            Additional Information
-                                        </div>
+                                    <li data-jstree='{"icon":"include/cog.png"}' id='8f9983bfa1797eaa0fe686260225d689-info'>
+                                        <p class='info'>Component metadata</p>
                                         <ul>
                                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='8f9983bfa1797eaa0fe686260225d689-info-ID'>
-                                            <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/048/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/048/</a></p>
+                                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/048/</a></p>
                                         </li>
                                         </ul>
                                     </li>
@@ -1228,13 +1206,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Track Composition</b>
                                     </div>
                                     <ul>
-                                    <li data-jstree='{"icon":"include/file.png"}' id='07b3f4544f90ddb7534096927193f487-info'>
-                                        <div class='content_container clearfix'>
-                                            Additional Information
-                                        </div>
+                                    <li data-jstree='{"icon":"include/cog.png"}' id='07b3f4544f90ddb7534096927193f487-info'>
+                                        <p class='info'>Component metadata</p>
                                         <ul>
                                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='07b3f4544f90ddb7534096927193f487-info-ID'>
-                                            <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/050/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/050/</a></p>
+                                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/050/</a></p>
                                         </li>
                                         </ul>
                                     </li>
@@ -1264,13 +1240,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>DM_AS_11_Segmentation</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='cbb833c2dc194fdf7d29749a875b87e8-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='cbb833c2dc194fdf7d29749a875b87e8-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='cbb833c2dc194fdf7d29749a875b87e8-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/505S/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/505S/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/505S/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1284,13 +1258,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>DM_AS_11_Segmentation</b>
                                         </div>
                                         <ul>
-                                        <li data-jstree='{"icon":"include/file.png"}' id='8985b955342d41eb5ac09d4f0457df77-info'>
-                                            <div class='content_container clearfix'>
-                                                Additional Information
-                                            </div>
+                                        <li data-jstree='{"icon":"include/cog.png"}' id='8985b955342d41eb5ac09d4f0457df77-info'>
+                                            <p class='info'>Component metadata</p>
                                             <ul>
                                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='8985b955342d41eb5ac09d4f0457df77-info-ID'>
-                                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/505L/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/505L/</a></p>
+                                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/505L/</a></p>
                                             </li>
                                             </ul>
                                         </li>
@@ -1306,13 +1278,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>DM_AS_11_Segmentation_Framework</b>
                                         </div>
                                         <ul>
-                                        <li data-jstree='{"icon":"include/file.png"}' id='23f3df1a6f6f7f752df2c21d928fc28e-info'>
-                                            <div class='content_container clearfix'>
-                                                Additional Information
-                                            </div>
+                                        <li data-jstree='{"icon":"include/cog.png"}' id='23f3df1a6f6f7f752df2c21d928fc28e-info'>
+                                            <p class='info'>Component metadata</p>
                                             <ul>
                                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='23f3df1a6f6f7f752df2c21d928fc28e-info-ID'>
-                                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/505F/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/505F/</a></p>
+                                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/505F/</a></p>
                                             </li>
                                             </ul>
                                         </li>
@@ -1334,13 +1304,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Implementation Notes</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='f67019a742e379ced6e3ca487ed4edb5-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='f67019a742e379ced6e3ca487ed4edb5-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='f67019a742e379ced6e3ca487ed4edb5-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/049/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/049/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/049/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1356,13 +1324,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Repetition of Header Metadata</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='9c6a5b7a2a34e5d43136a23fb82425f1-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='9c6a5b7a2a34e5d43136a23fb82425f1-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='9c6a5b7a2a34e5d43136a23fb82425f1-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/051/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/051/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/051/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1380,13 +1346,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Timecode constraints</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='f1f9920b4790dd7acd5cb0b69b164ff2-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='f1f9920b4790dd7acd5cb0b69b164ff2-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='f1f9920b4790dd7acd5cb0b69b164ff2-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/TT0_r001/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/TT0_r001/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/TT0_r001/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -1395,13 +1359,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Timecode Track Presence</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='632696aed1e9dfa00d3ff868a0099603-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='632696aed1e9dfa00d3ff868a0099603-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='632696aed1e9dfa00d3ff868a0099603-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/280/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/280/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/280/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1415,13 +1377,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='e7230973581d81dea71f4736d9bcc1c7-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='e7230973581d81dea71f4736d9bcc1c7-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='e7230973581d81dea71f4736d9bcc1c7-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/021/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/021/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/021/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1439,13 +1399,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Constrained Timecode Track in Material Package</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='a3ab75644426ca11461519c6e6a0b509-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='a3ab75644426ca11461519c6e6a0b509-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='a3ab75644426ca11461519c6e6a0b509-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/TTC_MP/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/TTC_MP/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/TTC_MP/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1459,13 +1417,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Constrained Timecode Track</b>
                                     </div>
                                     <ul>
-                                    <li data-jstree='{"icon":"include/file.png"}' id='a1cdd41f1dfaa97985b59b0df188d21c-info'>
-                                        <div class='content_container clearfix'>
-                                            Additional Information
-                                        </div>
+                                    <li data-jstree='{"icon":"include/cog.png"}' id='a1cdd41f1dfaa97985b59b0df188d21c-info'>
+                                        <p class='info'>Component metadata</p>
                                         <ul>
                                         <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='a1cdd41f1dfaa97985b59b0df188d21c-info-ID'>
-                                            <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/TTC/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/TTC/</a></p>
+                                            <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/TTC/</a></p>
                                         </li>
                                         </ul>
                                     </li>
@@ -1500,13 +1456,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Timecode mode signalling</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='6758f4add034f6bcabdc0453b673813e-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='6758f4add034f6bcabdc0453b673813e-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='6758f4add034f6bcabdc0453b673813e-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/DF/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/DF/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/DF/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1525,13 +1479,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Rational Numbers</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='f550e8ab819e16564131efa18a08fd9d-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='f550e8ab819e16564131efa18a08fd9d-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='f550e8ab819e16564131efa18a08fd9d-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/E69/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/E69/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/E69/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1549,13 +1501,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='22c0face3428a563a3aeea297e3f4887-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='22c0face3428a563a3aeea297e3f4887-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='22c0face3428a563a3aeea297e3f4887-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/E81/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/E81/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/E81/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1573,13 +1523,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Timecode Track Precedence</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='3e0a15f961c48f290e60e3f811ffa018-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='3e0a15f961c48f290e60e3f811ffa018-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='3e0a15f961c48f290e60e3f811ffa018-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/290/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/290/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/290/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1593,13 +1541,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='dcc79aa5568c492a4c95ce5226ae5567-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='dcc79aa5568c492a4c95ce5226ae5567-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='dcc79aa5568c492a4c95ce5226ae5567-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/022/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/022/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/022/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1619,13 +1565,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Miscellaneous Content Constraints</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='c658965d3062478909b7e556a050e2d2-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='c658965d3062478909b7e556a050e2d2-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='c658965d3062478909b7e556a050e2d2-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/996/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/996/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/996/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -1634,13 +1578,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>AFD present</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='ee78ba93c4d40792cc1d393cce800fea-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='ee78ba93c4d40792cc1d393cce800fea-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='ee78ba93c4d40792cc1d393cce800fea-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/350/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/350/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/350/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1654,13 +1596,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='0f3c06a8aeac1fb6eba5e76de9563631-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='0f3c06a8aeac1fb6eba5e76de9563631-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='0f3c06a8aeac1fb6eba5e76de9563631-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/036/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/036/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/036/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1678,13 +1618,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>AFD 9 10 14</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='7e118b02d00610c4ddaa7e5db34d18e6-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='7e118b02d00610c4ddaa7e5db34d18e6-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='7e118b02d00610c4ddaa7e5db34d18e6-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/351/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/351/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/351/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1698,13 +1636,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Implementation Notes</b>
                                 </div>
                                 <ul>
-                                <li data-jstree='{"icon":"include/file.png"}' id='0c06b000ece4dabc4ef4ec7185879c41-info'>
-                                    <div class='content_container clearfix'>
-                                        Additional Information
-                                    </div>
+                                <li data-jstree='{"icon":"include/cog.png"}' id='0c06b000ece4dabc4ef4ec7185879c41-info'>
+                                    <p class='info'>Component metadata</p>
                                     <ul>
                                     <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='0c06b000ece4dabc4ef4ec7185879c41-info-ID'>
-                                        <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/note/037/' target='_blank'>http://www.amwa.tv/projects/rules/01/note/037/</a></p>
+                                        <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/note/037/</a></p>
                                     </li>
                                     </ul>
                                 </li>
@@ -1724,13 +1660,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>4 audio channels</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='7d8b174131bde2655dc3c23821fdad61-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='7d8b174131bde2655dc3c23821fdad61-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='7d8b174131bde2655dc3c23821fdad61-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://www.amwa.tv/projects/rules/01/block/140/' target='_blank'>http://www.amwa.tv/projects/rules/01/block/140/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/block/140/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1746,13 +1680,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>R48 2a customisation</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='ec7a604b6f9ff0c7a13a7398766ea09a-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='ec7a604b6f9ff0c7a13a7398766ea09a-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='ec7a604b6f9ff0c7a13a7398766ea09a-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/170/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/170/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/170/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1773,13 +1705,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>No Closed Captions</b>
                             </div>
                             <ul>
-                            <li data-jstree='{"icon":"include/file.png"}' id='55ab80da96ac2758789b6887d8ac5cc8-info'>
-                                <div class='content_container clearfix'>
-                                    Additional Information
-                                </div>
+                            <li data-jstree='{"icon":"include/cog.png"}' id='55ab80da96ac2758789b6887d8ac5cc8-info'>
+                                <p class='info'>Component metadata</p>
                                 <ul>
                                 <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='55ab80da96ac2758789b6887d8ac5cc8-info-ID'>
-                                    <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/300/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/300/</a></p>
+                                    <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/300/</a></p>
                                 </li>
                                 </ul>
                             </li>
@@ -1797,13 +1727,11 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
 <b>Miscellaneous DM constraints (Descriptive Metadata)</b>
                         </div>
                         <ul>
-                        <li data-jstree='{"icon":"include/file.png"}' id='9555863b66556f9964f350ae378dd257-info'>
-                            <div class='content_container clearfix'>
-                                Additional Information
-                            </div>
+                        <li data-jstree='{"icon":"include/cog.png"}' id='9555863b66556f9964f350ae378dd257-info'>
+                            <p class='info'>Component metadata</p>
                             <ul>
                             <li data-jstree='{"icon":"hidden", "disabled":"true"}' id='9555863b66556f9964f350ae378dd257-info-ID'>
-                                <p class='info'><b>ID:</b> <a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/block/988/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/988/</a></p>
+                                <p class='info'><b>ID:</b> <a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/block/988/</a></p>
                             </li>
                             </ul>
                         </li>
@@ -1851,8 +1779,8 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
 
                      
             <div class="control_buttons_group">
-                <button class="btn btn-default" type="button" id="tInfo_btn_show">Show Additional Info</button>
-                <button class="btn btn-default" type="button" id="tInfo_btn_hide">Hide Additional Info</button>
+                <button class="btn btn-default" type="button" id="tInfo_btn_show"><img src="include/cog.png" alt="Cog icon" width="20" height="20">Show Component metadata</button>
+                <button class="btn btn-default" type="button" id="tInfo_btn_hide">Hide</button>
             </div>
         
 
@@ -1870,7 +1798,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A way of multiplexing up to eight channels of AES3 audio data.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/8-channel%20AES3%20element/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/8-channel%20AES3%20element/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/8-channel%20AES3%20element/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#781f0a6d6a9ee16d2563502270514c43' title='Element and Metadata Definitions for the SDTI-CP'>SMPTE ST 331</a></div>
                         
@@ -1885,7 +1813,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A distinct collection of sequenced audio samples that are intended for delivery to a single loudspeaker or other reproduction device.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Audio%20Channel/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Audio%20Channel/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Audio%20Channel/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#bdd9a4b9a9a14c700af4d9d4125e1550' title='MXF Multichannel Audio Labeling Framework'>SMPTE ST 377-4</a></div>
                         
@@ -1900,7 +1828,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>Generic term used for descriptive data whose purpose is to describe <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a> data.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Descriptive%20Metadata/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Descriptive%20Metadata/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Descriptive%20Metadata/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -1915,7 +1843,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A <a class='' data-toggle='tooltip' href='#7150e554f75900790c8c3f881e96f2be' title='Generic term used for descriptive data whose purpose is to describe &lt;Essence&gt; data.'>Descriptive Metadata</a> Class that is a Subclass of Descriptive Framework.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/DM%20Framework/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/DM%20Framework/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/DM%20Framework/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -1930,7 +1858,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A mechanism for defining collections of <a class='' data-toggle='tooltip' href='#7150e554f75900790c8c3f881e96f2be' title='Generic term used for descriptive data whose purpose is to describe &lt;Essence&gt; data.'>Descriptive Metadata</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/DM%20Scheme/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/DM%20Scheme/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/DM%20Scheme/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -1945,7 +1873,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An identifier for a <a class='' data-toggle='tooltip' href='#fa15b8750111a71e70cab0e6e5301908' title='A mechanism for defining collections of &lt;Descriptive Metadata&gt;.'>DM Scheme</a>. It is stored in an MXF file's Preface::DMSchemes property to signify the use of that <a class='' data-toggle='tooltip' href='#fa15b8750111a71e70cab0e6e5301908' title='A mechanism for defining collections of &lt;Descriptive Metadata&gt;.'>DM Scheme</a> in the file.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/DM%20Scheme%20Label/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/DM%20Scheme%20Label/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/DM%20Scheme%20Label/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -1960,7 +1888,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An MXF structure used to generically contain <a class='' data-toggle='tooltip' href='#7150e554f75900790c8c3f881e96f2be' title='Generic term used for descriptive data whose purpose is to describe &lt;Essence&gt; data.'>Descriptive Metadata</a> on a <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/DM%20Segment/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/DM%20Segment/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/DM%20Segment/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -1975,7 +1903,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A temporal division of a <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Edit%20Unit/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Edit%20Unit/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Edit%20Unit/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -1990,7 +1918,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A bitstream comprising picture, sound or data.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Essence/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Essence/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Essence/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2005,7 +1933,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>The entire essence stream of a single <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Essence%20Element/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Essence%20Element/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Essence%20Element/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#ee556d59cf1a949872bb1994e840b7a5' title='MXF Generic Container'>SMPTE ST 379-2</a></div>
                         
@@ -2020,7 +1948,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A type of <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a> that references <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Essence%20Track/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Essence%20Track/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Essence%20Track/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2035,7 +1963,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An MXF structure used to describe empty space on a <a class='' data-toggle='tooltip' href='#95702d9e1a85ceed443a5f54670378d1' title='A specialized MXF &lt;Track&gt; that describes a timeline by specifying an origin and rate.'>Timeline Track</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Filler/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Filler/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Filler/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2050,7 +1978,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A method for dividing and interleaving <a class='' data-toggle='tooltip' href='#61982b5ed02ff43bdf04c4f760ac762f' title='The entire essence stream of a single &lt;Track&gt;.'>Essence Element</a>s for each frame of <a class='' data-toggle='tooltip' href='#6d9c72436cb98e9faee73f2656efa7bb' title='A type of &lt;Essence&gt; containing predominantly picture data.'>Picture Essence</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Frame%20Wrapping/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Frame%20Wrapping/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Frame%20Wrapping/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#ee556d59cf1a949872bb1994e840b7a5' title='MXF Generic Container'>SMPTE ST 379-2</a></div>
                         
@@ -2065,7 +1993,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>MXF data structure used to store <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a> data in an MXF file.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Generic%20Container/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Generic%20Container/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Generic%20Container/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#ee556d59cf1a949872bb1994e840b7a5' title='MXF Generic Container'>SMPTE ST 379-2</a></div>
                         
@@ -2080,7 +2008,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>MXF data structures that collectively describe the data in the <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a> data in an MXF file.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Header%20Metadata/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Header%20Metadata/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Header%20Metadata/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2095,7 +2023,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>The first <a class='' data-toggle='tooltip' href='#bb30298ea161fa662a2f8aa4cb9bbfea' title='A portion of the MXF file. An MXF file consists of a sequence of Partitions.'>Partition</a> in the MXF file. This <a class='' data-toggle='tooltip' href='#bb30298ea161fa662a2f8aa4cb9bbfea' title='A portion of the MXF file. An MXF file consists of a sequence of Partitions.'>Partition</a> always contains a copy of the <a class='' data-toggle='tooltip' href='#2441aa4867211062de2f85d2d3aae320' title='MXF data structures that collectively describe the data in the &lt;Essence&gt; data in an MXF file.'>Header Metadata</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Header%20Partition/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Header%20Partition/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Header%20Partition/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2110,7 +2038,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A structure in an MXF file used to efficiently access <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a> data.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Index%20Table/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Index%20Table/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Index%20Table/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2125,7 +2053,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>Refers to the well-defined means of inserting empty, "fill", data in an MXF file.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/KLV%20Fill/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/KLV%20Fill/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/KLV%20Fill/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2140,7 +2068,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An MXF data structure that describe an output timeline of the file.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Material%20Package/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Material%20Package/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Material%20Package/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2155,7 +2083,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An MXF structure that aggregates one or more <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a>s.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Package/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Package/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Package/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2170,7 +2098,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A portion of the MXF file. An MXF file consists of a sequence of Partitions.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Partition/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Partition/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Partition/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2185,7 +2113,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A type of <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a> containing predominantly picture data.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Picture%20Essence/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Picture%20Essence/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Picture%20Essence/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2200,7 +2128,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>MXF technical metadata that describes the <a class='' data-toggle='tooltip' href='#6d9c72436cb98e9faee73f2656efa7bb' title='A type of &lt;Essence&gt; containing predominantly picture data.'>Picture Essence</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Picture%20Essence%20Descriptor/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Picture%20Essence%20Descriptor/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Picture%20Essence%20Descriptor/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2215,7 +2143,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A type of <a class='' data-toggle='tooltip' href='#5307e0d9df24b87f5f7c0b9bab1c3497' title='A type of &lt;Track&gt; that references &lt;Essence&gt;.'>Essence Track</a> that references <a class='' data-toggle='tooltip' href='#6d9c72436cb98e9faee73f2656efa7bb' title='A type of &lt;Essence&gt; containing predominantly picture data.'>Picture Essence</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Picture%20Track/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Picture%20Track/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Picture%20Track/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2230,7 +2158,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A Structural Metadata Class that is a Subclass of Structural Component.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Sequence/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Sequence/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Sequence/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2245,7 +2173,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A type of <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a> containing sound data.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Sound%20Essence/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Sound%20Essence/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Sound%20Essence/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2260,7 +2188,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p><a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a> data referenced by a <a class='' data-toggle='tooltip' href='#3ef08aa408802291630eeb28612e6785' title='MXF data structure that describes source &lt;Essence&gt;.'>Source Package</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Source%20Essence/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Source%20Essence/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Source%20Essence/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2275,7 +2203,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>MXF data structure that describes source <a class='' data-toggle='tooltip' href='#a2db301d86a5b89829270ea4b6909413' title='A bitstream comprising picture, sound or data.'>Essence</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Source%20Package/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Source%20Package/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Source%20Package/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2290,7 +2218,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a> carrying unchanging <a class='' data-toggle='tooltip' href='#7150e554f75900790c8c3f881e96f2be' title='Generic term used for descriptive data whose purpose is to describe &lt;Essence&gt; data.'>Descriptive Metadata</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Static%20Track%20(DM)/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Static%20Track%20(DM)/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Static%20Track%20(DM)/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2305,7 +2233,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An annotation of elapsed time along a <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a>.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Timecode/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Timecode/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Timecode/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2320,7 +2248,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An MXF structure that stores <a class='' data-toggle='tooltip' href='#67a74025143b849bb64a0e3b39ac98f6' title='An annotation of elapsed time along a &lt;Track&gt;.'>Timecode</a> information.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Timecode%20Component/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Timecode%20Component/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Timecode%20Component/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2335,7 +2263,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>An MXF <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a> that stores one or more <a class='' data-toggle='tooltip' href='#81bb200e8bf4ec107239fa1dd9b936e9' title='An MXF structure that stores &lt;Timecode&gt; information.'>Timecode Component</a>s.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Timecode%20Track/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Timecode%20Track/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Timecode%20Track/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2350,7 +2278,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A specialized MXF <a class='' data-toggle='tooltip' href='#a6e70078edee6f3408e4ecf62cc077e8' title='MXF data structure used to describe the content structure.'>Track</a> that describes a timeline by specifying an origin and rate.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Timeline%20Track/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Timeline%20Track/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Timeline%20Track/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2365,7 +2293,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>A <a class='' data-toggle='tooltip' href='#3ef08aa408802291630eeb28612e6785' title='MXF data structure that describes source &lt;Essence&gt;.'>Source Package</a> that is internal to the file and which is directly referenced by a <a class='' data-toggle='tooltip' href='#2d90a6d5e37bc488b754432604d27810' title='An MXF data structure that describe an output timeline of the file.'>Material Package</a> of the file.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Top-Level%20File%20Package/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Top-Level%20File%20Package/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Top-Level%20File%20Package/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2380,7 +2308,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td><p>MXF data structure used to describe the content structure.</p>
 
                              
-                        <div class='info tInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/term/Track/' target='_blank'>http://www.amwa.tv/projects/rules/01/term/Track/</a></div>
+                        <div class='info tInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/term/Track/</a></div>
                         
                             <div class='info tInfo_permanent'><b>Defined By: </b><a class='' data-toggle='tooltip' href='#2ac1cb7a194dfe7fe8269a9760dcd495' title='Material Exchange Format (MXF) — File Format Specification'>SMPTE ST 377-1</a></div>
                         
@@ -2398,8 +2326,8 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
 
                 
             <div class="control_buttons_group">
-                <button class="btn btn-default" type="button" id="rInfo_btn_show">Show Additional Info</button>
-                <button class="btn btn-default" type="button" id="rInfo_btn_hide">Hide Additional Info</button>
+                <button class="btn btn-default" type="button" id="rInfo_btn_show"><img src="include/cog.png" alt="Cog icon" width="20" height="20">Show Component metadata</button>
+                <button class="btn btn-default" type="button" id="rInfo_btn_hide">Hide</button>
             </div>
         
 
@@ -2418,7 +2346,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>Audio Track Allocation for File Exchange<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference/EBU%20R%20123/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference/EBU%20R%20123/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference/EBU%20R%20123/</a></div>
                     
 
                     <br>
@@ -2433,7 +2361,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                             Audio Track Allocation for File Exchange<br>
                             <a href='https://tech.ebu.ch/docs/r/r123.pdf' target='_blank'>https://tech.ebu.ch/docs/r/r123.pdf</a>
                                 
-                                <div class='info rInfo'><b>ID: </b><a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference_revision/EBU%20R%20123-2009/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference_revision/EBU%20R%20123-2009/</a></div>
+                                <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference_revision/EBU%20R%20123-2009/</a></div>
                             
                             </td></tr>
 
@@ -2451,7 +2379,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>Allocation of audio tracks on digital television recorders<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference/EBU%20R%2048/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference/EBU%20R%2048/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference/EBU%20R%2048/</a></div>
                     
 
                     <br>
@@ -2466,7 +2394,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                             Allocation of audio tracks on digital television recorders<br>
                             <a href='https://tech.ebu.ch/publications/r048' target='_blank'>https://tech.ebu.ch/publications/r048</a>
                                 
-                                <div class='info rInfo'><b>ID: </b><a href='http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference_revision/EBU%20R%2048-2005/' target='_blank'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference_revision/EBU%20R%2048-2005/</a></div>
+                                <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://vm-1274-user.virt.ch.bbc.co.uk/as/external_reference_revision/EBU%20R%2048-2005/</a></div>
                             
                             </td></tr>
 
@@ -2484,7 +2412,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>Element and Metadata Definitions for the SDTI-CP<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20331/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20331/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20331/</a></div>
                     
 
                     <br>
@@ -2501,7 +2429,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>Material Exchange Format (MXF) — File Format Specification<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20377-1/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20377-1/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20377-1/</a></div>
                     
 
                     <br>
@@ -2516,7 +2444,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                             Material Exchange Format (MXF) — File Format Specification<br>
                             <a href='http://dx.doi.org/10.5594/SMPTE.ST377-1.2011' target='_blank'>http://dx.doi.org/10.5594/SMPTE.ST377-1.2011</a>
                                 
-                                <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20377-1-2011/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20377-1-2011/</a></div>
+                                <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20377-1-2011/</a></div>
                             
                             </td></tr>
 
@@ -2532,7 +2460,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                             Material Exchange Format (MXF) −− File Format Specification<br>
                             <a href='http://dx.doi.org/10.5594/SMPTE.ST377.2004' target='_blank'>http://dx.doi.org/10.5594/SMPTE.ST377.2004</a>
                                 
-                                <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20377-1-2004/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20377-1-2004/</a></div>
+                                <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20377-1-2004/</a></div>
                             
                             </td></tr>
 
@@ -2550,7 +2478,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>MXF Multichannel Audio Labeling Framework<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20377-4/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20377-4/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20377-4/</a></div>
                     
 
                     <br>
@@ -2567,7 +2495,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>MXF Operational pattern 1A (Single Item, Single Package)<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20378/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20378/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20378/</a></div>
                     
 
                     <br>
@@ -2582,7 +2510,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                             MXF Operational pattern 1A (Single Item, Single Package)<br>
                             <a href='http://dx.doi.org/10.5594/SMPTE.ST378.2004' target='_blank'>http://dx.doi.org/10.5594/SMPTE.ST378.2004</a>
                                 
-                                <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20378-2004/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20378-2004/</a></div>
+                                <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20378-2004/</a></div>
                             
                             </td></tr>
 
@@ -2600,7 +2528,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>MXF Generic Container<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20379-2/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20379-2/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20379-2/</a></div>
                     
 
                     <br>
@@ -2617,7 +2545,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>Mapping AES3 and Broadcast Wave Audio into the MXF Generic Container<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20382/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20382/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20382/</a></div>
                     
 
                     <br>
@@ -2632,7 +2560,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                             Mapping AES3 and Broadcast Wave Audio into the MXF Generic Container<br>
                             <a href='http://dx.doi.org/10.5594/SMPTE.ST382.2007' target='_blank'>http://dx.doi.org/10.5594/SMPTE.ST382.2007</a>
                                 
-                                <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20382-2007/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20382-2007/</a></div>
+                                <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20382-2007/</a></div>
                             
                             </td></tr>
 
@@ -2650,7 +2578,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                     <td>Mapping Type D-10 Essence Data to the MXF Generic Container<br>
 
                         
-                        <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20386/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20386/</a></div>
+                        <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference/SMPTE%20ST%20386/</a></div>
                     
 
                     <br>
@@ -2665,7 +2593,7 @@ CHECK( AS_11_Shim_Version == {&quot;VersionMajor&quot;:1, &quot;VersionMinor&quo
                             Mapping Type D-10 Essence Data to the MXF Generic Container<br>
                             <a href='http://dx.doi.org/10.5594/SMPTE.ST386.2004' target='_blank'>http://dx.doi.org/10.5594/SMPTE.ST386.2004</a>
                                 
-                                <div class='info rInfo'><b>ID: </b><a href='http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20386-2004/' target='_blank'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20386-2004/</a></div>
+                                <div class='info rInfo'><b>ID: </b><a class='' data-toggle='tooltip' href='#component-id-message' title='ID (identity) of this Rules-based Specification Component: Click to read an explanation'>http://www.amwa.tv/projects/rules/01/external_reference_revision/SMPTE%20ST%20386-2004/</a></div>
                             
                             </td></tr>
 
@@ -2787,7 +2715,7 @@ project are available from the <a href="http://amwa.tv/">AMWA</a></p>
 
         
             <div class='footer_html'>
-                &copy; AMWA 2016, Licensed under the <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, Version 2.0</a>
+                &copy; AMWA 2017, Licensed under the <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, Version 2.0</a>
             </div>
         
 
