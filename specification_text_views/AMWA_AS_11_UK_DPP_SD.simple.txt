@@ -147,7 +147,7 @@ An implementation complies with this Specification if it complies with the Compo
     [B] Simple channel numbering for 8-channel AES3 element
         Conformance: mandatory
         [A] The "channel number in the <8-channel AES3 element> is the "Audio Track Number" defined in <EBU R 48> and <EBU R 123>.
-    [B] AS-11 Core DM
+    [B] AS-11 Core DM (Descriptive Metadata)
         Conformance: mandatory
         [A] The file contains exactly one instance of <DM_AS_11_Core DM Scheme>.
             [B] DM_AS_11_Core DM Scheme
@@ -166,7 +166,7 @@ An implementation complies with this Specification if it complies with the Compo
                     [A] The "Track Name" property of an <Constrained Static DM Track> does not identify the <DM Scheme> whose <DM Framework> it references. In the absence of other requirements for "Track Name", it is suggested that files use a value corresponding to the <DM Scheme> used in the track, e.g. "AS_11_Core", "AS_11_UKDPP".
         [N] Repetition of Header Metadata
             [A] Repetition of Header Metadata in the Footer Partition is not considered to be another instance of any of the components of that Header Metadata.
-    [B] AS-11 UKDPP DM
+    [B] AS-11 UKDPP DM (Descriptive Metadata)
         Conformance: mandatory
         [A] The file contains exactly one instance of <DM_AS_11_UKDPP DM Scheme>.
             [B] DM_AS_11_UKDPP DM Scheme
@@ -185,7 +185,7 @@ An implementation complies with this Specification if it complies with the Compo
                     [A] The "Track Name" property of an <Constrained Static DM Track> does not identify the <DM Scheme> whose <DM Framework> it references. In the absence of other requirements for "Track Name", it is suggested that files use a value corresponding to the <DM Scheme> used in the track, e.g. "AS_11_Core", "AS_11_UKDPP".
         [N] Repetition of Header Metadata
             [A] Repetition of Header Metadata in the Footer Partition is not considered to be another instance of any of the components of that Header Metadata.
-    [B] AS-11 Segmentation DM
+    [B] AS-11 Segmentation DM (Descriptive Metadata)
         Conformance: mandatory
         [A] The file contains exactly one <Program Segmentation Track>.
             [B] Program Segmentation Track
@@ -265,11 +265,14 @@ An implementation complies with this Specification if it complies with the Compo
             [A] Only the channels in the <8-channel AES3 element> with a "channel number" of 1, 2, 3 or 4 are valid.
         [B] R48 2a customisation
             Conformance: mandatory
-            [A] If the value of AS_11_Audio_Track_Layout is Layout_EBU_R_48_2a then each channel in the <8-channel AES3 element> with a "channel number" of 3 or 4 contains digital silence.
+            [A] The number of <Audio Channel>s described by the scheme identified by the value of AS_11_Audio_Track_Layout is equal to the number of valid channels in the <8-channel AES3 element> except that a value of Layout_EBU_R_48_2a is permitted when all of the following are true:
+                
+                * there are four valid channels in the <8-channel AES3 element>
+                * each channel in the <8-channel AES3 element> with a "channel number" of 3 or 4 contains digital silence
         [B] No Closed Captions
             Conformance: mandatory
             [A] The file does not contain closed captions.
-    [B] Miscellaneous DM constraints (UKDPP SD)
+    [B] Miscellaneous DM constraints (Descriptive Metadata)
         Conformance: mandatory
         [A] Metadata Constraints as Python (refer to the 'Specification Format Definition'): http://vm-1274-user.virt.ch.bbc.co.uk/as/block/988/artefacts/audio_track_layout.py
         [A] Metadata Constraints as Python (refer to the 'Specification Format Definition'): http://vm-1274-user.virt.ch.bbc.co.uk/as/block/988/artefacts/shim.py

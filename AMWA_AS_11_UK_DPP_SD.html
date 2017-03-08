@@ -730,7 +730,7 @@
                     </li>
                     <li data-jstree='{"icon":"include/block.png"}' id='02029df65def6483d73ddd7357bbdc47'>
                         <div class='content_container clearfix'>
-<b>AS-11 Core DM</b>
+<b>AS-11 Core DM (Descriptive Metadata)</b>
                         </div>
                         <ul>
                         <li data-jstree='{"icon":"include/file.png"}' id='02029df65def6483d73ddd7357bbdc47-info'>
@@ -910,7 +910,7 @@ if (AS_11_Closed_Captions_Present):
                     </li>
                     <li data-jstree='{"icon":"include/block.png"}' id='ba2fb662b24a54bc35b96cf5cd05737a'>
                         <div class='content_container clearfix'>
-<b>AS-11 UKDPP DM</b>
+<b>AS-11 UKDPP DM (Descriptive Metadata)</b>
                         </div>
                         <ul>
                         <li data-jstree='{"icon":"include/file.png"}' id='ba2fb662b24a54bc35b96cf5cd05737a-info'>
@@ -1109,7 +1109,7 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
                     </li>
                     <li data-jstree='{"icon":"include/block.png"}' id='e9dafc6e705232fdd27bd101ec6ae9f4'>
                         <div class='content_container clearfix'>
-<b>AS-11 Segmentation DM</b>
+<b>AS-11 Segmentation DM (Descriptive Metadata)</b>
                         </div>
                         <ul>
                         <li data-jstree='{"icon":"include/file.png"}' id='e9dafc6e705232fdd27bd101ec6ae9f4-info'>
@@ -1758,7 +1758,12 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
                             </li>
                             <li data-jstree='{"icon":"include/artefact.png"}' id='e7e949cd5fd34f0c61b18f6674488c9a'>
                                 <div class='content_container clearfix'>
-<p>If the value of AS_11_Audio_Track_Layout is Layout_EBU_R_48_2a then each channel in the <a class='' data-toggle='tooltip' href='#d4acccead3d82a87fb945f9ad1694ad1' title='A way of multiplexing up to eight channels of AES3 audio data.'>8-channel AES3 element</a> with a "channel number" of 3 or 4 contains digital silence.</p>
+<p>The number of <a class='' data-toggle='tooltip' href='#22dd147bbc7edf9dc85ffd2e7f560ab3' title='A distinct collection of sequenced audio samples that are intended for delivery to a single loudspeaker or other reproduction device.'>Audio Channel</a>s described by the scheme identified by the value of AS_11_Audio_Track_Layout is equal to the number of valid channels in the <a class='' data-toggle='tooltip' href='#d4acccead3d82a87fb945f9ad1694ad1' title='A way of multiplexing up to eight channels of AES3 audio data.'>8-channel AES3 element</a> except that a value of Layout_EBU_R_48_2a is permitted when all of the following are true:</p>
+
+<ul>
+<li>there are four valid channels in the <a class='' data-toggle='tooltip' href='#d4acccead3d82a87fb945f9ad1694ad1' title='A way of multiplexing up to eight channels of AES3 audio data.'>8-channel AES3 element</a></li>
+<li>each channel in the <a class='' data-toggle='tooltip' href='#d4acccead3d82a87fb945f9ad1694ad1' title='A way of multiplexing up to eight channels of AES3 audio data.'>8-channel AES3 element</a> with a "channel number" of 3 or 4 contains digital silence</li>
+</ul>
                                 </div>
                             </li>
                             </ul>
@@ -1789,7 +1794,7 @@ if PRESENT(UKDPP_Programme_Has_Text) and UKDPP_Programme_Has_Text:
                     </li>
                     <li data-jstree='{"icon":"include/block.png"}' id='9555863b66556f9964f350ae378dd257'>
                         <div class='content_container clearfix'>
-<b>Miscellaneous DM constraints (UKDPP SD)</b>
+<b>Miscellaneous DM constraints (Descriptive Metadata)</b>
                         </div>
                         <ul>
                         <li data-jstree='{"icon":"include/file.png"}' id='9555863b66556f9964f350ae378dd257-info'>
