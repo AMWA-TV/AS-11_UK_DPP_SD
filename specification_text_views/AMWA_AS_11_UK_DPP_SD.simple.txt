@@ -1,4 +1,4 @@
-# **[Specification]** AS-11 UK DPP SD (MXF Program Contribution - UK DPP SD)
+# **[Specification (Stable)]** AS-11 UK DPP SD (MXF Program Contribution - UK DPP SD)
 
 |*Important links*| |
 |-----------------|-|
