@@ -1,4 +1,4 @@
-# **[Specification (Stable)]** AS-11 UK DPP SD (MXF Program Contribution - UK DPP SD)
+# **[Specification (Published & Stable)]** AS-11 UK DPP SD (MXF Program Contribution - UK DPP SD)
 
 ### **View the latest version of this Specification online [here](https://amwa-tv.github.io/AS-11_UK_DPP_SD/AMWA_AS_11_UK_DPP_SD.html)**.
 
